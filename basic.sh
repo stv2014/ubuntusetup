@@ -1,2 +1,31 @@
+#!/bin/bash
+
+# java repository
+# https://launchpad.net/~webupd8team/+archive/ubuntu/java
+add-apt-repository ppa:webupd8team/java
+
+#docker repository
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
 apt-get update
-apt-get install git nano emacs
+
+#The java installer will prompt for ok
+apt-get install oracle-java8-installer
+
+apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
+
+apt-get install git nano emacs maven python-pip npm scala asciidoc  asciidoctor graphviz gimp
+
+
+# Docker
+# https://docs.docker.com/engine/installation/linux/ubuntu/#uninstall-docker
+apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+apt-key fingerprint 0EBFCD88
+#apt-get update
+
+sudo apt-get remove docker docker-engine
+apt-get install docker-ce
+
