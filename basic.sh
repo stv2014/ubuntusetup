@@ -4,6 +4,12 @@
 # https://launchpad.net/~webupd8team/+archive/ubuntu/java
 add-apt-repository ppa:webupd8team/java
 
+add-apt-repository ppa:webupd8team/atom
+
+add-apt-repository ppa:webupd8team/brackets
+
+add-apt-repository ppa:webupd8team/sublime-text-3
+
 #docker repository
 add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -14,9 +20,27 @@ apt-get update
 #The java installer will prompt for ok
 apt-get install oracle-java8-installer
 
-apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
-
-apt-get install git nano emacs maven python-pip npm scala asciidoc  asciidoctor graphviz gimp
+apt-get install linux-image-extra-$(uname -r) \
+	linux-image-extra-virtual \
+        curl \
+	wget \
+	git \
+	nano \
+	emacs \
+	maven \
+	python-pip \
+	npm \
+	scala \
+	asciidoc  \
+	asciidoctor \
+	graphviz \
+	gimp \
+	eclipse-platform \
+	netbeans \
+	tomcat8 \
+	atom \
+	brackets \
+	sublime-text-installer
 
 
 # Docker
@@ -28,4 +52,6 @@ apt-key fingerprint 0EBFCD88
 
 sudo apt-get remove docker docker-engine
 apt-get install docker-ce
+
+#It is an old version of
 
