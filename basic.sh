@@ -22,7 +22,7 @@ apt-get install oracle-java8-installer
 
 apt-get install linux-image-extra-$(uname -r) \
 	linux-image-extra-virtual \
-        curl \
+  curl \
 	wget \
 	git \
 	nano \
@@ -40,7 +40,11 @@ apt-get install linux-image-extra-$(uname -r) \
 	tomcat8 \
 	atom \
 	brackets \
-	sublime-text-installer
+	sublime-text-installer \
+  chromium-browser
+
+# remove some packages I don't like / don't need
+apt-get remove transmission-gtk thunderbird hexchat pidgin cheese brasero
 
 
 # Docker
@@ -53,5 +57,9 @@ apt-key fingerprint 0EBFCD88
 sudo apt-get remove docker docker-engine
 apt-get install docker-ce
 
-#It is an old version of
+groupadd docker
+gpasswd -a ${USER} docker
+service docker restart
 
+
+#It is an old version of
