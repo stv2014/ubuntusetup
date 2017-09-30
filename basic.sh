@@ -18,7 +18,7 @@ add-apt-repository \
 apt-get update
 
 #The java installer will prompt for ok
-apt-get install oracle-java8-installer
+apt-get install oracle-java9-installer
 
 apt-get install linux-image-extra-$(uname -r) \
 	linux-image-extra-virtual \
